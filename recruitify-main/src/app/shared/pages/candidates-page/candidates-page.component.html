@@ -1,0 +1,62 @@
+<div class="page_container candidates_container">
+  <div class="candidates_heading">
+    <div class="candidates_count">{{ candidatesList.length }}</div>
+
+    <h3 class="candidates_title">
+      {{ currentProjectName }}
+    </h3>
+
+    <div class="candidates_filter-wrap">
+      <nz-input-group [nzSuffix]="inputClearTpl">
+        <input
+          type="text"
+          nz-input
+          placeholder="Search for candidates"
+          [(ngModel)]="searchValue"
+          (ngModelChange)="onSearchChange($event)"
+        />
+      </nz-input-group>
+      <ng-template #inputClearTpl>
+        <i
+          nz-icon
+          class="ant-input-clear-icon"
+          nzTheme="fill"
+          nzType="close-circle"
+          *ngIf="searchValue"
+          (click)="onSearchClear()"
+        ></i>
+      </ng-template>
+      <div class="candidates_filter-btn" (click)="openDrawer()"></div>
+
+      <a
+        *ngIf="isRecruiter"
+        class="menu_link"
+        [routerLink]="['/calendar', currentProjectId]"
+        routerLinkActive="active"
+      >
+        <svg class="menu_icon">
+          <use
+            xlink:href="assets/images/nav-icons/navSprite.svg#calendar"
+          ></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <app-dropdown-menu
+    *ngIf="menuVisible"
+    [projectId]="currentProjectId"
+  ></app-dropdown-menu>
+  <app-candidates-table
+    [isLoading]="isLoading"
+    [currentProjectId]="currentProjectId"
+    [candidatesList]="candidatesList"
+    (onFilters)="applyCandidatesFilters($event)"
+  ></app-candidates-table>
+
+  <app-filter-drawer
+    [drawerVisible]="drawerVisible"
+    [candidatesList]="candidatesList"
+    (onCandidatesFilters)="showFiltersResults($event)"
+    [currentProjectId]="currentProjectId"
+  ></app-filter-drawer>
+</div>

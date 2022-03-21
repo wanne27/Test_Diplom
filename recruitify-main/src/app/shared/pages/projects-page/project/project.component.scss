@@ -1,0 +1,103 @@
+.card_heading {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-card {
+  // min-width: 400px;
+  color: #0082ca;
+  font-weight: 400;
+  cursor: default;
+  // box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+  // transition: all 0.2s ease-in-out;
+  // &:hover {
+  //   box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3);
+  //   transform: scale(1.005);
+  // }
+
+  .project-info {
+    display: flex;
+    justify-content: space-between;
+    .skills {
+      min-height: 2.75rem;
+      font-weight: 600;
+      margin: 0;
+    }
+  }
+
+  app-participants {
+    // margin-bottom: 50%;
+    // display: flex;
+    // align-self: center;
+    transition: 0.3s;
+    &:hover {
+      transform: scale(1.1);
+      filter: brightness(150%);
+    }
+  }
+  .project-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .edit-btn {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  .project-card {
+    min-width: none;
+    width: 100%;
+
+    .card_heading {
+      height: 45px;
+      position: relative;
+      align-items: flex-start;
+
+      button {
+        position: absolute;
+        bottom: -5px;
+        left: 0px;
+      }
+    }
+
+    .card-title {
+      font-size: 16px;
+    }
+
+    .project-info {
+      flex-direction: column;
+    }
+
+    .project-buttons {
+      width: 100%;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+
+    .skills {
+      width: 100%;
+    }
+
+    app-participants {
+      margin: 0;
+    }
+  }
+}
+
+.card-title {
+  color: #0082ca;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.closedProject {
+  filter: brightness(0.93);
+  // filter: saturate(20%);
+}

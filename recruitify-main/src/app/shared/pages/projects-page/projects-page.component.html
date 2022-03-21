@@ -1,0 +1,49 @@
+<div class="projects page_container">
+  <div class="projects_head">
+    <button
+      *ngIf="isAdmin"
+      nz-button
+      nzType="primary"
+      (click)="handleToggle(true)"
+    >
+      Create Project
+    </button>
+    <div class="search">
+      <div class="filter" (click)="toggleFiltersVisible(true)">
+        <img src="assets/images/Vector.png" alt="filter" />
+      </div>
+      <nz-input-group [nzSuffix]="inputClearTpl">
+        <input
+          type="text"
+          nz-input
+          placeholder="Search for projects"
+          [(ngModel)]="searchText"
+          (ngModelChange)="onSearchChange($event)"
+        />
+      </nz-input-group>
+      <ng-template #inputClearTpl>
+        <i
+          nz-icon
+          class="ant-input-clear-icon"
+          nzTheme="fill"
+          nzType="close-circle"
+          *ngIf="searchText"
+          (click)="onSearchClear()"
+        ></i>
+      </ng-template>
+    </div>
+  </div>
+
+  <app-projects-list
+    [loading]="isLoading"
+    [projects]="projectsPageFacade.ProjectsList$ | async"
+  ></app-projects-list>
+  <app-create-project
+    (onProjectListChange)="onProjectListChange()"
+  ></app-create-project>
+</div>
+<app-project-filters
+  [isVisible]="isFiltersVisible"
+  (onToggleIsVisible)="toggleFiltersVisible($event)"
+  (onFilters)="applyProjectsFilters($event)"
+></app-project-filters>

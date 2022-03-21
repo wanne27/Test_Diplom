@@ -1,0 +1,37 @@
+<nz-modal
+  [(nzVisible)]="isModalVisible"
+  [nzTitle]="modalTitle"
+  [nzFooter]="modalFooter"
+  (nzOnCancel)="handleCancel()"
+>
+  <ng-container *nzModalContent>
+    <textarea rows="9" nz-input [(ngModel)]="emailTemplate"></textarea>
+
+    <div class="test-link">
+      <div class="test-link_img"></div>
+      <a href="www.somelink.com/candidatetest">
+        www.somelink.com/candidatetest
+      </a>
+    </div>
+  </ng-container>
+</nz-modal>
+
+<ng-template #modalTitle>
+  <nz-select ngModel="Test" style="width: 30%">
+    <nz-option nzValue="Test" nzLabel="Test"></nz-option>
+    <nz-option nzValue="Acceptance " nzLabel="Acceptance "></nz-option>
+    <nz-option nzValue="Declination" nzLabel="Declination"></nz-option>
+    <nz-option nzValue="Waiting list" nzLabel="Waiting list"></nz-option>
+  </nz-select>
+</ng-template>
+
+<ng-template #modalFooter>
+  <button
+    nz-button
+    class="menu_status-btn"
+    nzType="primary"
+    (click)="sendEmail()"
+  >
+    Send Notification
+  </button>
+</ng-template>

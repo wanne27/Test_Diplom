@@ -1,0 +1,258 @@
+[
+  {
+    "id": "c07e12be-30bd-11ec-853c-0392a821ec1f",
+    "name": "Christopher",
+    "surname": "Elliott",
+    "englishLevel": 0,
+    "phoneNumber": "+375333421342",
+    "email": "elliott@mail.ru",
+    "contacts": [
+      {
+        "type": "VK",
+        "value": "id3242344"
+      },
+      {
+        "type": "Instagram",
+        "value": "@bigbaby"
+      }
+    ],
+    "location": {
+      "city": "Minsk",
+      "country": "Belarus"
+    },
+    "primarySkills": [
+      {
+        "primarySkillId": "aeb0e468-3774-11ec-83d4-97dbf3c3f8eb",
+        "primarySkillName": ".Net"
+      }
+    ],
+    "registrationDate": "2021-02-12T00:00:00.000Z",
+    "bestTimeToConnect": [14, 15, 20],
+    "goingToExadel": true,
+    "projectResults": [
+      {
+        "projectId": "dd49fe8f-d697-41a5-be23-7066563b85a6",
+        "feedbacks": [
+          {
+            "userId": "d1b13d9f-3799-456b-87e2-1bef7db71cb1",
+            "type": 2,
+            "textFeedback": "Weak knowledge of the database",
+            "rating": 2,
+            "isRecommended": false,
+            "createdOn": "2021-08-15T11:45:17.000Z"
+          }
+        ],
+        "status": 3
+      },
+      {
+        "projectId": "bdbc3af0-f882-4f4f-bbb8-3e87ba16b768",
+        "feedbacks": [
+          {
+            "type": 0,
+            "rating": 4,
+            "isRecommended": true,
+            "createdOn": "2021-03-12T10:17:36.000Z"
+          },
+          {
+            "userId": "71da4db7-36ec-4a6b-bfb3-38d2462bdf2d",
+            "type": 2,
+            "rating": 5,
+            "textFeedback": "Able to learn, has a good basic knowledge",
+            "isRecommended": true,
+            "createdOn": "2021-04-18T10:25:12.000Z"
+          }
+        ],
+        "status": 1
+      }
+    ],
+    "currentJob": "LTD Bank-Alfa",
+    "additionalInfo": "I can only do an internship in the evening"
+  },
+  {
+    "id": "c89c4d88-30e7-11ec-929c-0f374fa83b31",
+    "name": "Robert",
+    "surname": "Bruce",
+    "englishLevel": 2,
+    "phoneNumber": "+375337349087",
+    "email": "robertio@mail.ru",
+    "contacts": [
+      {
+        "type": "Facebook",
+        "value": "id=100002956189257"
+      }
+    ],
+    "location": {
+      "city": "Moscow",
+      "country": "Russian Federation"
+    },
+    "primarySkills": [
+      {
+        "primarySkillId": "d66d9d10-3775-11ec-9f7d-f7d443b3f4f3",
+        "primarySkillName": "BusinessAnalyst"
+      },
+      {
+        "primarySkillId": "a539cb10-3775-11ec-8803-1b868ded28bd",
+        "primarySkillName": "JavaScript"
+      }
+    ],
+    "registrationDate": "2021-03-11T00:00:00.000Z",
+    "bestTimeToConnect": [21, 22],
+    "goingToExadel": true,
+    "projectResults": [
+      {
+        "projectId": "dd49fe8f-d697-41a5-be23-7066563b85a6",
+        "feedbacks": [
+          {
+            "userId": "cb40d31e-7447-4ec0-bc53-ab566f3a7b2e",
+            "type": 2,
+            "rating": 4,
+            "textFeedback": "It is worth considering the admission to the project",
+            "isRecommended": true,
+            "createdOn": "2021-08-13T12:10:30.000Z"
+          },
+          {
+            "type": 0,
+            "rating": 5,
+            "isRecommended": true,
+            "createdOn": "2021-08-28T11:24:43.000Z"
+          },
+          {
+            "userId": "d1b13d9f-3799-456b-87e2-1bef7db71cb1",
+            "type": 3,
+            "rating": 4,
+            "textFeedback": "Demonstrated good knowledge of async programming.",
+            "isRecommended": true,
+            "createdOn": "2021-09-28T10:57:34.000Z"
+          }
+        ],
+        "status": 5
+      }
+    ],
+    "currentJob": "Cafe Mint",
+    "certificates": "Oracle Certified",
+    "additionalInfo": "Ready to start anytime"
+  },
+  {
+    "id": "7d4ab133-4c7b-47c2-a7c6-827bdd010aae",
+    "name": "Byron",
+    "surname": "Jackson",
+    "englishLevel": 2,
+    "phoneNumber": "+375332563489",
+    "email": "jackson@gmail.com",
+    "contacts": [
+      {
+        "type": "Instagram",
+        "value": "@jackgreen"
+      },
+      {
+        "type": "Facebook",
+        "value": "id=100002979189885"
+      }
+    ],
+    "location": {
+      "city": "Vitebsk",
+      "country": "Belarus"
+    },
+    "primarySkills": [
+      {
+        "primarySkillId": "aeb0e468-3774-11ec-83d4-97dbf3c3f8eb",
+        "primarySkillName": ".Net"
+      },
+      {
+        "primarySkillId": "afc19c2a-3775-11ec-90a5-8785abd9a90d",
+        "primarySkillName": "DevOps"
+      },
+      {
+        "primarySkillId": "b7d88aa4-3775-11ec-93ad-f7d63f513914",
+        "primarySkillName": "Java"
+      }
+    ],
+    "registrationDate": "2021-01-18T00:00:00.000Z",
+    "bestTimeToConnect": [8, 9, 18, 19, 20],
+    "goingToExadel": false,
+    "projectResults": [
+      {
+        "projectId": "dd49fe8f-d697-41a5-be23-7066563b85a6",
+        "feedbacks": [
+          {
+            "userId": "d1b13d9f-3799-456b-87e2-1bef7db71cb1",
+            "type": 2,
+            "rating": 4,
+            "textFeedback": "Fully suited to the project",
+            "isRecommended": true,
+            "createdOn": "2021-08-16T10:27:18.000Z"
+          }
+        ],
+        "status": 1
+      },
+      {
+        "projectId": "2beed73a-30b5-11ec-808a-fb45776a1ed3",
+        "status": 0
+      }
+    ],
+    "currentJob": "LLC Acronis",
+    "certificates": "CompTIA",
+    "additionalInfo": "Ready to start now"
+  },
+  {
+    "id": "1e6a306e-30ec-11ec-a7bb-37cfa4f75a73",
+    "name": "Brian",
+    "surname": "Gaines",
+    "englishLevel": 2,
+    "phoneNumber": "+375255486325",
+    "email": "gainesss@gmail.com",
+    "location": {
+      "city": "Kiev",
+      "country": "Ukraine"
+    },
+    "primarySkills": [
+      {
+        "primarySkillId": "b7d88aa4-3775-11ec-93ad-f7d63f513914",
+        "primarySkillName": "Java"
+      },
+      {
+        "primarySkillId": "c3307088-3775-11ec-8e04-b7d29fa6ce1f",
+        "primarySkillName": "ProjectManager"
+      }
+    ],
+    "registrationDate": "2021-03-01T00:00:00.000Z",
+    "bestTimeToConnect": [14, 15, 16, 17, 18],
+    "goingToExadel": true,
+    "projectResults": [
+      {
+        "projectId": "bdbc3af0-f882-4f4f-bbb8-3e87ba16b768",
+        "feedbacks": [
+          {
+            "userId": "71da4db7-36ec-4a6b-bfb3-38d2462bdf2d",
+            "type": 2,
+            "rating": 3,
+            "textFeedback": "Has basic skills and knowledge",
+            "isRecommended": true,
+            "createdOn": "2021-03-14T10:11:14.000Z"
+          },
+          {
+            "type": 0,
+            "rating": 2,
+            "isRecommended": false,
+            "createdOn": "2021-04-07T12:09:53.000Z"
+          },
+          {
+            "userId": "d1b13d9f-3799-456b-87e2-1bef7db71cb1",
+            "type": 3,
+            "rating": 4,
+            "textFeedback": "Fully suitable for independent work",
+            "isRecommended": true,
+            "createdOn": "2021-04-29T11:43:50.000Z"
+          }
+        ],
+        "status": 5
+      },
+      {
+        "projectId": "2beed73a-30b5-11ec-808a-fb45776a1ed3",
+        "status": 0
+      }
+    ],
+    "currentJob": "LLC Pilot",
+    "additionalInfo": "I have experience in programming in js"
+  }
+]

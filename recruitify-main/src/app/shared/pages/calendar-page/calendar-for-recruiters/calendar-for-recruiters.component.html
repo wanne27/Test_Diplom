@@ -1,0 +1,78 @@
+<div style="min-width: 1160px">
+  <div class="menu">
+    <a
+      nz-button
+      nzType="link"
+      *ngIf="!isBtnSaveVisible; else prevBtnWithPop"
+      (click)="onPreviousDayButtonClick()"
+    >
+      <<<
+    </a>
+    <nz-date-picker
+      nzSize="small"
+      nzFormat="dd.MM.yyyy"
+      [(ngModel)]="datepickerValue"
+      (ngModelChange)="onCalendarDateChange($event)"
+    ></nz-date-picker>
+    <a
+      nz-button
+      nzType="link"
+      *ngIf="!isBtnSaveVisible; else nextBtnWithPop"
+      (click)="onNextDayButtonClick()"
+      >>>></a
+    >
+  </div>
+
+  <button
+    class="save-btn"
+    *ngIf="isBtnSaveVisible"
+    nz-button
+    nzType="primary"
+    nzSize="small"
+    nz-popconfirm
+    [nzPopconfirmTitle]="popTitleEmail"
+    nzPopconfirmPlacement="leftTop"
+    (nzOnConfirm)="onSaveConfirm()"
+  >
+    Save
+  </button>
+  <app-skills-tabset></app-skills-tabset>
+</div>
+
+<ng-template #prevBtnWithPop>
+  <a
+    nz-button
+    nzType="link"
+    nz-popconfirm
+    [nzPopconfirmTitle]="popTitle"
+    nzPopconfirmPlacement="bottomLeft"
+    (nzOnConfirm)="onPreviousDayButtonClick()"
+    ><<<</a
+  >
+</ng-template>
+
+<ng-template #nextBtnWithPop>
+  <a
+    nz-button
+    nzType="link"
+    nz-popconfirm
+    [nzPopconfirmTitle]="popTitle"
+    nzPopconfirmPlacement="bottomRight"
+    (nzOnConfirm)="onNextDayButtonClick()"
+    >>>></a
+  >
+</ng-template>
+
+<ng-template #popTitle>
+  <i nz-icon nzType="exclamation" nzTheme="outline" style="color: #39ce30"></i>
+
+  <p style="margin: 0; padding-left: 20px">Are you sure?</p>
+  <small>Your last changes will not be saved</small>
+</ng-template>
+
+<ng-template #popTitleEmail>
+  <i nz-icon nzType="check" nzTheme="outline" style="color: #39ce30"></i>
+  <p style="margin: 0; padding-left: 20px">
+    Сonfirm sending email to {{ candidatesToSendEmail.length }} candidates
+  </p>
+</ng-template>

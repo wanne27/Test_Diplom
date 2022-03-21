@@ -1,0 +1,18 @@
+.calendar-wrapp {
+  margin-top: 30px;
+  padding: 20px;
+  background: #fff;
+  position: relative;
+  overflow-x: auto;
+}
+
+app-calendar-for-interviewers {
+  min-width: 1160px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+app-calendar-for-recruiters {
+  min-width: 1160px;
+}

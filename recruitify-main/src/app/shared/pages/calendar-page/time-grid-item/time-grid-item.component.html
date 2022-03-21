@@ -1,0 +1,46 @@
+<div
+  (mousedown)="onMouseDown($event)"
+  (mouseover)="onMouseOver()"
+  (contextmenu)="onContextMenu()"
+  [ngClass]="{
+    'time-grid_item--last': day < yesterday || isFuture,
+    'time-grid_item': day >= today || !isFuture,
+    'time-grid_item--marked': isMarked,
+    'time-grid_item--assigned': isAssigned
+  }"
+  (click)="setDatesToSend()"
+  nz-popover
+  [nzPopoverTitle]="popTitle"
+  [nzPopoverContent]="popBody"
+  nzPopoverPlacement="left"
+  [nzPopoverTrigger]="setPopTrigger()"
+></div>
+
+<ng-template #popTitle>
+  <div class="pop-title">
+    <p>{{ time }}, {{ day | date: "dd.MM" }}</p>
+  </div>
+</ng-template>
+
+<ng-template #popBody>
+  <div class="pop-body">
+    <p class="pop-body_name">
+      <a
+        nz-button
+        nzType="link"
+        style="font-size: 12px; margin: 0; padding: 0; margin-right: 10px"
+        [routerLink]="[
+          '/' + 'profile',
+          assignedCandidate.id,
+          assignedCandidate.projectResult.projectId
+        ]"
+      >
+        {{ assignedCandidate.name }} {{ assignedCandidate.surname }}
+      </a>
+      {{ assignedCandidate.projectResult.primarySkill.name }}
+    </p>
+    <!-- <p>Project: {{ assignedCandidate.projectResult.projectName }}</p> -->
+    <!-- <p>Status: New</p> -->
+    <p>E-mail: {{ assignedCandidate.email }}</p>
+  </div>
+</ng-template>

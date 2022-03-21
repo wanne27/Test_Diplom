@@ -1,0 +1,97 @@
+@use "../../../../globals/" as *;
+.profile {
+  font-size: 1rem !important;
+  position: relative;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+  background: #ffffff;
+  color: $primaryColor;
+  &_wrapper {
+    max-width: 1200px;
+    margin: 1rem auto;
+    padding: 0 1rem;
+  }
+  p {
+    margin: 0;
+  }
+
+  span {
+    font-weight: 500;
+  }
+
+  &_info {
+    margin-top: 11px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .main-info {
+      width: 50%;
+      &_heading {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .name {
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .stack {
+        font-size: 16px;
+      }
+
+      .location {
+        font-weight: 500;
+      }
+    }
+
+    .add-info {
+      width: 50%;
+      position: relative;
+      padding: 10px;
+      border: 1px solid $primaryColor;
+
+      &_title {
+        position: absolute;
+        top: -12px;
+        left: 10px;
+        padding: 0 3px;
+        font-weight: 600;
+        background: #ffffff;
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    .profile_info {
+      flex-direction: column;
+    }
+
+    .main-info {
+      width: 100%;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .add-info {
+      width: 100%;
+    }
+  }
+}
+
+.goback-btn {
+  width: 24px;
+  height: 1rem;
+  background: url(../../../../assets/images/goBackArrow.svg) no-repeat center
+    center;
+  background-size: cover;
+  cursor: pointer;
+}

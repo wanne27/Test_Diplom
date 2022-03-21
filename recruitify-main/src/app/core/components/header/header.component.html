@@ -1,0 +1,78 @@
+<header>
+  <div class="header">
+    <div class="header-container">
+      <div class="logo">
+        <a routerLink="/"
+          ><img src="assets/images/RecruitifyLogo.png" alt="logo"
+        /></a>
+      </div>
+      <div class="menu">
+        <div class="menu_nav">
+          <a
+            class="menu_link"
+            [routerLink]="['/', 'projects']"
+            routerLinkActive="active"
+            nz-popover
+            nzPopoverContent="Projects"
+            nzPopoverPlacement="bottom"
+          >
+            <svg class="menu_icon">
+              <use
+                xlink:href="assets/images/nav-icons/navSprite.svg#projects"
+              ></use>
+            </svg>
+          </a>
+          <a
+            *ngIf="isAdmin"
+            class="menu_link"
+            [routerLink]="['/', 'candidates']"
+            routerLinkActive="active"
+            nz-popover
+            nzPopoverContent="Candidates"
+            nzPopoverPlacement="bottom"
+          >
+            <svg class="menu_icon">
+              <use
+                xlink:href="assets/images/nav-icons/navSprite.svg#candidates"
+              ></use>
+            </svg>
+          </a>
+          <a
+            *ngIf="isInterviewer"
+            class="menu_link"
+            [routerLink]="['/', 'calendar']"
+            routerLinkActive="active"
+            nz-popover
+            nzPopoverContent="Calendar"
+            nzPopoverPlacement="bottom"
+          >
+            <svg class="menu_icon">
+              <use
+                xlink:href="assets/images/nav-icons/navSprite.svg#calendar"
+              ></use>
+            </svg>
+          </a>
+        </div>
+        <div class="menu_user">
+          <p class="menu_user-name">{{ user?.name }}</p>
+          <button
+            nz-popconfirm
+            nzPopconfirmTitle="Are you sure to logout?"
+            nzPopconfirmPlacement="bottomRight"
+            nz-button
+            class="menu_link logut_btn"
+            (nzOnConfirm)="onLogoutBtnClick()"
+            nzType="link"
+            nzOkText="Log out"
+          >
+            <svg class="logout_icon">
+              <use
+                xlink:href="assets/images/nav-icons/navSprite.svg#logout"
+              ></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

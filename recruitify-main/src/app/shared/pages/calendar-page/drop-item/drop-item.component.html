@@ -1,0 +1,90 @@
+<div
+  (click)="
+    onItemClick(
+      timetableTime.candidate[0],
+      timetableTime.time,
+      currentInterviewer.id
+    )
+  "
+  nz-popover
+  [nzPopoverTrigger]="setPopTrigger(timetableTime.candidate[0])"
+  [nzPopoverTitle]="popTitle"
+  [nzPopoverContent]="popBody"
+  nzPopoverPlacement="left"
+  [(nzPopoverVisible)]="isPopVisible"
+  [ngClass]="{
+    markedByInterviewer: timetableTime.isAvaliable,
+    avaliableToDrop: setIsAvaliableToDrop(
+      timetableTime.time,
+      dragedCandidate.bestTimeToConnect
+    ),
+    assigned: timetableTime.candidate[0] || isAssigned
+  }"
+  [dragula]="setDragulaValue(timetableTime.candidate)"
+  [(dragulaModel)]="timetableTime.candidate"
+  [id]="timeIdForItem"
+></div>
+
+<ng-template #popTitle>
+  <div class="pop-title">
+    <p>{{ datePickerValue | date: "EE, dd.MM" }}</p>
+    <p>{{ timeIdForItem | date: "HH:mm" }}</p>
+  </div>
+</ng-template>
+
+<ng-template #popBody>
+  <div class="pop-body">
+    <p class="pop-body_name">
+      <a
+        nz-button
+        nzType="link"
+        style="font-size: 12px; margin: 0; padding: 0; margin-right: 10px"
+        [routerLink]="[
+          '/' + 'profile',
+          assignedCandidate
+            ? assignedCandidate.id
+            : assignedCandidateFromBack.id,
+          assignedCandidate
+            ? assignedCandidate.projectId
+            : assignedCandidateFromBack.projectResult.projectId
+        ]"
+        >{{
+          assignedCandidate
+            ? assignedCandidate.name
+            : assignedCandidateFromBack.name
+        }}
+        {{
+          assignedCandidate
+            ? assignedCandidate.surname
+            : assignedCandidateFromBack.surname
+        }}</a
+      >
+      {{
+        assignedCandidate
+          ? assignedCandidate.skill
+          : assignedCandidateFromBack.projectResult.primarySkill.name
+      }}
+    </p>
+    <!-- <p>Project: {{ assignedCandidate ? assignedCandidate.project :  }}</p> -->
+    <p>Status: Test</p>
+    <p>
+      E-mail:
+      {{
+        assignedCandidate
+          ? assignedCandidate.email
+          : assignedCandidateFromBack.email
+      }}
+    </p>
+    <!-- <p>Skype: {{ assignedCandidate.skype }}</p> -->
+    <!-- *ngIf="assignedCandidatesToSendEmail.length" -->
+    <button
+      *ngIf="!isAssigned"
+      nz-button
+      nzType="primary"
+      nzSize="small"
+      (click)="onRemoveBtnClick(assignedCandidate)"
+    >
+      Remove
+    </button>
+  </div>
+</ng-template>

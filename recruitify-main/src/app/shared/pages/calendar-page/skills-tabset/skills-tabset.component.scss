@@ -1,0 +1,11 @@
+.tab_wrap {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 15px max-content(250px) 1fr;
+}
+
+app-time-line {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}

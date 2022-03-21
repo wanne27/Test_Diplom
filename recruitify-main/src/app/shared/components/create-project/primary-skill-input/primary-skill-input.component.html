@@ -1,0 +1,44 @@
+<nz-collapse style="margin-bottom: 0.5rem">
+  <nz-collapse-panel
+    [nzHeader]="header"
+    [nzActive]="isInitiallyActive"
+    [nzExtra]="extra"
+  >
+    <ng-template #header>
+      <span [ngClass]="{ errorText: !form.valid }">
+        {{ index + 1 + ". " }}
+        {{ form.value.name + " " }}
+        {{ form.invalid ? "(invalid)" : "" }}
+      </span>
+    </ng-template>
+    <ng-template #extra>
+      <button nzSize="small" nz-button nzDanger (click)="remove($event)">
+        remove
+      </button>
+    </ng-template>
+    <form [formGroup]="form" nz-form nzLayout="vertical" nz-row [nzGutter]="16">
+      <div nz-col [nzSpan]="24">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="testLink"
+            >Link to test task</nz-form-label
+          >
+          <nz-form-control nzErrorTip="Please enter link to the test task">
+            <input nz-input formControlName="testLink" id="testLink" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col [nzSpan]="24">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="description"
+            >Description</nz-form-label
+          >
+          <nz-form-control
+            nzErrorTip="Please enter description of the primary skill"
+          >
+            <input nz-input formControlName="description" id="description" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+    </form>
+  </nz-collapse-panel>
+</nz-collapse>

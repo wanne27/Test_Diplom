@@ -1,0 +1,34 @@
+<div
+  class="candidates"
+  dragula="calendar"
+  [(dragulaModel)]="displayedCandidates"
+>
+  <div
+    class="candidate"
+    *ngFor="let candidate of displayedCandidates"
+    id="{{ candidate.id }}"
+    [ngClass]="{
+      status1:
+        candidate.status === 'RecruiterInterview' &&
+        !displayedInterviewerIsRecruiter,
+      status2:
+        candidate.status === 'TechInterviewOneStep' &&
+        !displayedInterviewerIsRecruiter,
+      status3:
+        candidate.status === 'TechInterviewSecondStep' &&
+        !displayedInterviewerIsRecruiter
+    }"
+  >
+    <div class="candidate_skill">
+      {{
+        candidate.projectResult
+          ? candidate.projectResult.primarySkill.name
+          : candidate.skill
+      }}
+    </div>
+    <p>{{ candidate.name }} {{ candidate.surname }}</p>
+    <p>
+      {{ candidate.bestTimeToConnect.join(", ") }}
+    </p>
+  </div>
+</div>

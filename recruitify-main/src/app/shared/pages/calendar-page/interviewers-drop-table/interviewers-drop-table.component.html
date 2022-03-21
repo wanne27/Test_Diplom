@@ -1,0 +1,29 @@
+<div class="timetable">
+  <div class="timetable_row" *ngFor="let interviewer of displayedInterviewers">
+    <div class="timetable_staff" *ngIf="isRecruiter; else interviewerName">
+      {{ recruiterName }}
+    </div>
+
+    <ng-template #interviewerName>
+      <div class="timetable_staff">
+        {{ interviewer.name }}, {{ interviewer.skill }}
+      </div>
+    </ng-template>
+
+    <div class="timetable_grid" *ngIf="isWeekDay; else weekendRow">
+      <div
+        class="timetable_grid-item"
+        *ngFor="let time of interviewer.calendar[0].timetable"
+      >
+        <app-drop-item
+          [timetableTime]="time"
+          [currentInterviewer]="interviewer"
+        ></app-drop-item>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #weekendRow>
+  <div class="weekend-row">🥳 no interview for today! 🥳</div>
+</ng-template>

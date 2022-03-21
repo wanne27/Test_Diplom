@@ -1,0 +1,92 @@
+<div class="heading">
+  <div class="heading_switcher">
+    <label>Working weekends</label>
+    <nz-switch
+      nzSize="small"
+      [(ngModel)]="isWorkingWeekends"
+      (ngModelChange)="printWeekends()"
+    ></nz-switch>
+  </div>
+
+  <div class="heading_btns" *ngIf="!isBtnSaveVisible; else btnsWithPopconfirm">
+    <a nz-button nzType="link" (click)="onPreviousBtnClick()"
+      ><<< Previous week</a
+    >
+    <a nz-button nzType="link" (click)="onNextBtnClick()">Next week >>></a>
+  </div>
+</div>
+
+<app-time-line></app-time-line>
+
+<div class="calendar">
+  <div class="calendar_interviewers">{{ interviewersName }}</div>
+  <div class="calendar_weekdays">
+    <div
+      class="calendar_weekday"
+      *ngFor="let day of displayedWeekDays"
+      [ngStyle]="
+        day.getDate() === today.getDate() ? { background: '#faecc0' } : null
+      "
+    >
+      {{ day | date: "MMM, d" }}
+      {{ day | date: "ccc" }}
+    </div>
+  </div>
+  <div class="calendar_time-grid" appCalendarItem>
+    <app-time-grid-row
+      *ngFor="let day of displayedWeekDays"
+      [day]="day"
+    ></app-time-grid-row>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="prompt">
+    <div class="prompt_img"></div>
+    <div class="prompt_text">
+      <div class="prompt_text-item">
+        LMB - if you can interview a candidate at this time
+      </div>
+      <div class="prompt_text-item">RMB - cancel your choise</div>
+    </div>
+  </div>
+
+  <button
+    *ngIf="isBtnSaveVisible"
+    nz-button
+    nzSize="default"
+    nzType="primary"
+    (click)="onSaveBtnClick()"
+  >
+    Save
+  </button>
+</div>
+
+<ng-template #btnsWithPopconfirm>
+  <div class="heading_btns">
+    <a
+      nz-button
+      nzType="link"
+      nz-popconfirm
+      [nzPopconfirmTitle]="popTitle"
+      nzPopconfirmPlacement="bottomLeft"
+      (nzOnConfirm)="onPreviousBtnClick()"
+      ><<< Previous week</a
+    >
+    <a
+      nz-button
+      nzType="link"
+      nz-popconfirm
+      [nzPopconfirmTitle]="popTitle"
+      nzPopconfirmPlacement="bottomRight"
+      (nzOnConfirm)="onNextBtnClick()"
+      >Next week >>></a
+    >
+  </div>
+</ng-template>
+
+<ng-template #popTitle>
+  <i nz-icon nzType="exclamation" nzTheme="outline" style="color: #39ce30"></i>
+  <p style="margin: 0; padding-left: 15px">Are you sure?</p>
+  <small>Your last changes will not be saved</small>
+</ng-template>

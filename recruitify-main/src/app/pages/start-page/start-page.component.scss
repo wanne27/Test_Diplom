@@ -1,0 +1,90 @@
+.start {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url(../../../assets/images/landing/background.jpg) no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  .container {
+    max-width: 1200px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  &_title {
+    font-size: 27px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &_subtitle {
+    font-size: 20px;
+    font-weight: 500;
+    color: #696b6d;
+    text-align: center;
+  }
+
+  &_info {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 150px);
+
+    &-img1 {
+      background: url(../../../assets/images/landing/img1.png) no-repeat center center;
+      background-size: cover;
+    }
+
+    &-img2 {
+      background: url(../../../assets/images/landing/img2.png) no-repeat center center;
+      background-size: cover;
+    }
+    &-img3 {
+      background: url(../../../assets/images/landing/img3.png) no-repeat center center;
+      background-size: cover;
+    }
+    &-img4 {
+      background: url(../../../assets/images/landing/img4.png) no-repeat center center;
+      background-size: cover;
+    }
+    &-img5 {
+      background: url(../../../assets/images/landing/img5.png) no-repeat center center;
+      background-size: cover;
+    }
+
+    &-text {
+      padding: 0 10px;
+      text-align: center;
+      align-self: center;
+      font-size: 16px;
+      font-weight: 500;
+      color: #696b6d;
+    }
+  }
+
+  &_btn {
+    width: 190px;
+    height: 45px;
+    font-size: 16px;
+  }
+
+  @media (max-width: 750px) {
+    .container {
+      padding: 40px 10px;
+    }
+
+    &_info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(5, 150px);
+      gap: 10px;
+    }
+  }
+}

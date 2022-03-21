@@ -1,0 +1,108 @@
+<nz-card
+  class="project-card"
+  [nzTitle]="titleTemplate"
+  [nzHoverable]="true"
+  [ngClass]="{ closedProject: !card.isActive }"
+>
+  <!-- [nzExtra]="extraTemplate" -->
+  <div class="project-info">
+    <div class="description">
+      <p class="skills">
+        <nz-tag *ngFor="let item of card.primarySkills" nzColor="blue">
+          {{ item.name }}
+        </nz-tag>
+        <!-- Primary skills:
+        <nz-tag [nzColor]="'blue'">blue</nz-tag>
+        <span *ngFor="let item of card.primarySkills; index as i">
+          {{ item.name + (card.primarySkills.length - 1 === i ? "" : " | ") }}
+        </span> -->
+      </p>
+      <p style="margin: 0">
+        <span style="font-weight: 600">Status:</span>
+        {{ card.isActive ? "Active" : "Closed" }}
+      </p>
+      <p style="margin: 0">
+        <span style="font-weight: 600">Start:</span>
+        {{ card.startDate | date: "dd.MM.yyyy" }}
+      </p>
+      <p style="margin: 0">
+        <span style="font-weight: 600">Finish:</span>
+        {{ card.endDate | date: "dd.MM.yyyy" }}
+      </p>
+    </div>
+    <div class="project-buttons">
+      <app-participants
+        [registered]="card?.currentApplicationsCount!"
+        [required]="card.plannedApplicationsCount"
+        [routerLink]="['/projects', card.id]"
+      ></app-participants>
+      <button
+        *ngIf="isAdmin"
+        nz-button
+        (click)="onEdit()"
+        nzType="primary"
+        class="edit-btn"
+      >
+        Edit project
+      </button>
+    </div>
+  </div>
+</nz-card>
+
+<nz-drawer
+  [nzClosable]="true"
+  [nzVisible]="isVisible"
+  nzPlacement="right"
+  nzTitle="Project staff"
+  (nzOnClose)="switchStaff()"
+  nzWidth="350px"
+>
+  <ng-container *nzDrawerContent>
+    <nz-collapse nzGhost>
+      <nz-collapse-panel [nzHeader]="Managers" nzActive="isVisible">
+        <p *ngFor="let panel of card.managers">{{ panel.userName }}</p>
+      </nz-collapse-panel>
+
+      <nz-collapse-panel [nzHeader]="Interviewers" nzActive="isVisible">
+        <p *ngFor="let panel of card.interviewers">{{ panel.userName }}</p>
+      </nz-collapse-panel>
+
+      <nz-collapse-panel [nzHeader]="Recruiters" nzActive="isVisible">
+        <p *ngFor="let panel of card.recruiters">{{ panel.userName }}</p>
+      </nz-collapse-panel>
+
+      <nz-collapse-panel [nzHeader]="Mentors" nzActive="isVisible">
+        <p *ngFor="let panel of card.mentors">{{ panel.userName }}</p>
+      </nz-collapse-panel>
+    </nz-collapse>
+  </ng-container>
+</nz-drawer>
+
+<ng-template #extraTemplate>
+  <button nz-button nzType="default" nzSize="small" (click)="switchStaff()">
+    View Staff
+  </button>
+</ng-template>
+
+<ng-template #titleTemplate>
+  <div class="card_heading">
+    <p class="card-title">{{ card.name }}</p>
+
+    <button nz-button nzType="default" nzSize="small" (click)="switchStaff()">
+      View Staff
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #Managers>
+  <span style="font-weight: 600">Managers</span>
+</ng-template>
+<ng-template #Interviewers>
+  <span style="font-weight: 600">Interviewers</span>
+</ng-template>
+<ng-template #Recruiters>
+  <span style="font-weight: 600">Recruiters</span>
+</ng-template>
+<ng-template #Mentors>
+  <span style="font-weight: 600">Mentors</span>
+</ng-template>

@@ -1,0 +1,298 @@
+<nz-drawer
+  [nzVisible]="isVisible"
+  nzTitle="Create new project"
+  (nzOnClose)="handleCancel()"
+  [nzWidth]="600"
+>
+  <!-- nzWidth="700px" -->
+  <ng-container *nzDrawerContent>
+    <form [formGroup]="form" nz-form nzLayout="vertical" nz-row [nzGutter]="16">
+      <!-- project name -->
+      <div nz-col [nzSpan]="21">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="name">Project Name</nz-form-label>
+          <nz-form-control [nzErrorTip]="nameError">
+            <input nz-input formControlName="name" id="name" />
+          </nz-form-control>
+        </nz-form-item>
+        <ng-template #nameError let-control>
+          <ng-container *ngIf="control.hasError('required')">
+            Project name is required
+          </ng-container>
+          <ng-container *ngIf="control.hasError('maxlength')">
+            max. length is 128 characters
+          </ng-container>
+        </ng-template>
+      </div>
+      <!-- isActive -->
+      <div nz-col [nzSpan]="3">
+        <nz-form-item>
+          <nz-form-label nzFor="isActive">Active</nz-form-label>
+          <nz-form-control>
+            <nz-switch formControlName="isActive" id="isActive"></nz-switch>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <!-- technologies or primary skills -->
+      <div nz-col [nzSpan]="24" style="margin-bottom: 1.5rem">
+        <div
+          nz-row
+          nzAlign="middle"
+          nzJustify="space-between"
+          style="margin-bottom: 0.5rem"
+        >
+          <nz-form-label nzRequired>Primary Skills</nz-form-label>
+          <button
+            nz-popover
+            nzPopoverTitle="Choose primary skill"
+            nzPopoverTrigger="click"
+            [nzPopoverContent]="contentTemplate"
+            nz-button
+          >
+            <i nz-icon nzType="plus" nzTheme="outline" style="color: #08c"></i>
+          </button>
+          <ng-template #contentTemplate>
+            <div *ngFor="let primarySkill of data?.primarySkills">
+              <label
+                [(ngModel)]="primarySkill.checked"
+                (ngModelChange)="onPrimarySkillToggle($event, primarySkill)"
+                [ngModelOptions]="{ standalone: true }"
+                nz-checkbox
+                [nzValue]="primarySkill.id"
+                >{{ primarySkill.name }}</label
+              >
+            </div>
+          </ng-template>
+        </div>
+        <app-primary-skill-input
+          *ngFor="let item of primarySkills | keyvalue; index as index"
+          [index]="index"
+          [form]="item.value"
+          (onPrimarySkillRemove)="onPrimarySkillRemove(item.key)"
+        ></app-primary-skill-input>
+        <div
+          class="errorText"
+          *ngIf="isPrimarySkillsTouched && primarySkills.size === 0"
+        >
+          Please add at least one primary skill
+        </div>
+      </div>
+
+      <!-- managers -->
+      <div nz-col [nzSpan]="12">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="managers"
+            >Choose manager(s)
+          </nz-form-label>
+          <nz-form-control nzErrorTip="Please choose any manager from the list">
+            <nz-select
+              [nzLoading]="false"
+              [nzShowArrow]="true"
+              nzMode="multiple"
+              nz-input
+              formControlName="managers"
+              id="managers"
+            >
+              <nz-option
+                *ngFor="let manager of data?.staffGroup?.managers"
+                [nzValue]="manager.userId"
+                [nzLabel]="manager.userName"
+              >
+              </nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <!-- recruiters -->
+      <div nz-col [nzSpan]="12">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="recruiters"
+            >Choose recruiter(s)
+          </nz-form-label>
+          <nz-form-control
+            nzErrorTip="Please choose any recruiter from the list"
+          >
+            <nz-select
+              [nzLoading]="false"
+              [nzShowArrow]="true"
+              nzMode="multiple"
+              nz-input
+              formControlName="recruiters"
+              id="recruiters"
+            >
+              <nz-option
+                *ngFor="let recruiter of data?.staffGroup?.recruiters"
+                [nzValue]="recruiter.userId"
+                [nzLabel]="recruiter.userName"
+              >
+              </nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <!-- interviewers -->
+      <div nz-col [nzSpan]="12">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="interviewers"
+            >Choose interviewer(s)
+          </nz-form-label>
+          <nz-form-control
+            nzErrorTip="Please choose any interviewer from the list"
+          >
+            <nz-select
+              [nzLoading]="false"
+              [nzShowArrow]="true"
+              nzMode="multiple"
+              nz-input
+              formControlName="interviewers"
+              id="interviewers"
+            >
+              <nz-option
+                *ngFor="let interviewer of data?.staffGroup?.interviewers"
+                [nzValue]="interviewer.userId"
+                [nzLabel]="interviewer.userName"
+              >
+              </nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <!-- mentors -->
+      <div nz-col [nzSpan]="12">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="mentors"
+            >Choose mentor(s)
+          </nz-form-label>
+          <nz-form-control nzErrorTip="Please choose any mentor from the list">
+            <nz-select
+              [nzLoading]="false"
+              [nzShowArrow]="true"
+              nzMode="multiple"
+              nz-input
+              formControlName="mentors"
+              id="mentors"
+            >
+              <nz-option
+                *ngFor="let mentor of data?.staffGroup?.mentors"
+                [nzValue]="mentor.userId"
+                [nzLabel]="mentor.userName"
+              >
+              </nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <!-- dates -->
+      <div nz-col [nzSpan]="24">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="registrationDates"
+            >Choose start and end dates of registration
+          </nz-form-label>
+          <nz-form-control [nzErrorTip]="registrationDatesError">
+            <nz-range-picker
+              [nzDisabledDate]="disabledDate"
+              class="datePicker"
+              formControlName="registrationDates"
+              id="registrationDates"
+            ></nz-range-picker>
+            <ng-template #registrationDatesError let-control>
+              <ng-container *ngIf="control.hasError('required')">
+                Please choose start and end dates of registration
+              </ng-container>
+              <ng-container *ngIf="control.hasError('same')">
+                Start and end registration dates cannot be the same
+              </ng-container>
+            </ng-template>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <!-- dates -->
+      <div nz-col [nzSpan]="12">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="dates"
+            >Choose start and end date
+          </nz-form-label>
+          <nz-form-control nzErrorTip="Please enter dates">
+            <nz-range-picker
+              [nzDisabledDate]="disabledProjectDate"
+              class="datePicker"
+              formControlName="dates"
+              id="dates"
+            ></nz-range-picker>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <!-- candidates' max count -->
+      <div nz-col [nzSpan]="12">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="plannedApplicationsCount"
+            >Max. candidates count
+          </nz-form-label>
+          <nz-form-control
+            nzErrorTip="Please enter planned number of candidated"
+          >
+            <input
+              type="number"
+              nz-input
+              formControlName="plannedApplicationsCount"
+              id="plannedApplicationsCount"
+            />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <!-- description -->
+      <div nz-col [nzSpan]="24">
+        <nz-form-item>
+          <nz-form-label nzFor="description">Description</nz-form-label>
+          <nz-form-control [nzErrorTip]="descriptionError">
+            <nz-textarea-count [nzMaxCharacterCount]="500">
+              <textarea
+                placeholder="You can write some description here"
+                nz-input
+                formControlName="description"
+                id="description"
+                rows="4"
+                nzAutosize
+              ></textarea>
+            </nz-textarea-count>
+            <ng-template #descriptionError let-control>
+              <ng-container *ngIf="control.hasError('maxlength')">
+                max. length is 500 characters
+              </ng-container>
+            </ng-template>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <button
+        [disabled]="isDeleting"
+        nz-button
+        nzType="primary"
+        nzBlock
+        [nzLoading]="isLoading"
+        type="submit"
+        (click)="submitForm()"
+      >
+        {{ editingId ? "Save" : "Create" }}
+      </button>
+      <ng-container *ngIf="editingId">
+        <div nz-row nzJustify="end" style="margin-top: 1rem; width: 100%">
+          <button
+            nz-popconfirm
+            nzPopconfirmTitle="Are you sure delete this project?"
+            (nzOnConfirm)="deleteProject()"
+            nzPopconfirmPlacement="leftBottom"
+            nz-button
+            nzType="link"
+            nzDanger
+            [disabled]="isLoading"
+            [nzLoading]="isDeleting"
+          >
+            Delete
+          </button>
+        </div>
+      </ng-container>
+    </form>
+  </ng-container>
+</nz-drawer>

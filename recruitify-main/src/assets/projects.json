@@ -1,0 +1,280 @@
+[
+  {
+    "id": "2beed73a-30b5-11ec-808a-fb45776a1ed3",
+    "name": "Java Web Development",
+    "startDate": "2022-01-10T00:00:00.000Z",
+    "endDate": "2022-03-30T00:00:00.000Z",
+    "currentApplicationsCount": "2",
+    "plannedApplicationsCount": "4",
+    "description": "The Java Web Development course is an introduction to software development in the Jav programming language and related technologies. The program includes learning the basics of Java and JDK, Servlets API and JS, implementation of simple web applications.",
+    "primarySkills": [
+      {
+        "id": "aeb0e468-3774-11ec-83d4-97dbf3c3f8eb",
+        "name": ".Net",
+        "description": "OOP, Design patterns, SQL, ASP.NET",
+        "testLink": "https://exadel.com/tests/net"
+      },
+      {
+        "id": "9ff9ab3e-3775-11ec-92f5-134491be8f5a",
+        "name": "QA",
+        "description": "CSS, HTML, Java Script",
+        "testLink": "https://exadel.com/tests/qa"
+      },
+      {
+        "id": "a539cb10-3775-11ec-8803-1b868ded28bd",
+        "name": "JavaScript",
+        "description": "HTML, React, Github, Bash, Express.js",
+        "testLink": "https://exadel.com/tests/javascript"
+      }
+    ],
+    "managers": [
+      {
+        "userId": "ce33e6c4-30ac-11ec-8d3d-0242ac130003",
+        "userName": "Alex Anderson"
+      }
+    ],
+    "interviewers": [
+      {
+        "userId": "d1b13d9f-3799-456b-87e2-1bef7db71cb1",
+        "userName": "Christopher Johnson"
+      },
+      {
+        "userId": "4f04e857-50ec-42d7-8fe4-0e3d3d8d34b3",
+        "userName": "David Lewis"
+      }
+    ],
+    "recruiters": [
+      {
+        "userId": "6f885f2c-b60d-4743-b381-4e841d48a956",
+        "userName": "Brandon Harris"
+      },
+      {
+        "userId": "03699464-c0a6-412f-8c83-eca85b359e91",
+        "userName": "Kevin Wils"
+      }
+    ],
+    "mentors": [
+      {
+        "userId": "4f04e857-50ec-42d7-8fe4-0e3d3d8d34b3",
+        "userName": "David Lewis"
+      },
+      {
+        "userId": "d1b13d9f-3799-456b-87e2-1bef7db71cb1",
+        "userName": "Christopher Johnson"
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": "7d85284c-30b5-11ec-95cb-230b32afd221",
+    "name": "Big Data",
+    "startDate": "2022-02-13T00:00:00.000Z",
+    "endDate": "2022-04-10T00:00:00.000Z",
+    "currentApplicationsCount": "1",
+    "plannedApplicationsCount": "3",
+    "description": "Big Data engineers develop distributed software solutions for information processing and analysis. The technologies used Big Data guarantee constant development and demand for big data specialists in various areas of software development.",
+    "primarySkills": [
+      {
+        "id": "aeb0e468-3774-11ec-83d4-97dbf3c3f8eb",
+        "name": ".Net"
+      }
+    ],
+    "managers": [
+      {
+        "userId": "73e05563-6c9e-4727-9ebb-b08f16cc1001",
+        "userName": "Anthony Clark"
+      }
+    ],
+    "interviewers": [
+      {
+        "userId": "cb40d31e-7447-4ec0-bc53-ab566f3a7b2e",
+        "userName": "Fred Taylor"
+      },
+      {
+        "userId": "71da4db7-36ec-4a6b-bfb3-38d2462bdf2d",
+        "userName": "Justin Walker"
+      }
+    ],
+    "recruiters": [
+      {
+        "userId": "6f885f2c-b60d-4743-b381-4e841d48a956",
+        "userName": "Brandon Harris"
+      }
+    ],
+    "mentors": [
+      {
+        "userId": "d1b13d9f-3799-456b-87e2-1bef7db71cb1",
+        "userName": "Christopher Johnson"
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": "bdbc3af0-f882-4f4f-bbb8-3e87ba16b768",
+    "name": "Big Data",
+    "startDate": "2021-03-10T00:00:00.000Z",
+    "endDate": "2021-05-01T00:00:00.000Z",
+    "currentApplicationsCount": "2",
+    "plannedApplicationsCount": "2",
+    "description": "Big Data engineers develop distributed software solutions for information processing and analysis. The technologies used Big Data guarantee constant development and demand for big data specialists in various areas of software development.",
+    "primarySkills": [
+      {
+        "id": "b7d88aa4-3775-11ec-93ad-f7d63f513914",
+        "name": "Java"
+      }
+    ],
+    "managers": [
+      {
+        "userId": "ce33e6c4-30ac-11ec-8d3d-0242ac130003",
+        "userName": "Alex Anderson"
+      }
+    ],
+    "interviewers": [
+      {
+        "userId": "d1b13d9f-3799-456b-87e2-1bef7db71cb1",
+        "userName": "Christopher Johnson"
+      },
+      {
+        "userId": "71da4db7-36ec-4a6b-bfb3-38d2462bdf2d",
+        "userName": "Justin Walker"
+      }
+    ],
+    "recruiters": [
+      {
+        "userId": "73e05563-6c9e-4727-9ebb-b08f16cc1001",
+        "userName": "Anthony Clark"
+      },
+      {
+        "userId": "03699464-c0a6-412f-8c83-eca85b359e91",
+        "userName": "Kevin Wils"
+      }
+    ],
+    "mentors": [
+      {
+        "userId": "4f04e857-50ec-42d7-8fe4-0e3d3d8d34b3",
+        "userName": "David Lewis"
+      }
+    ],
+    "isActive": false
+  },
+  {
+    "id": "871b1e7a-30b5-11ec-9b40-437a6473123c",
+    "name": "BA, JS, .NET Development",
+    "startDate": "2022-03-15T00:00:00.000Z",
+    "endDate": "2022-05-30T00:00:00.000Z",
+    "currentApplicationsCount": "1",
+    "plannedApplicationsCount": "4",
+    "description": "A Web developer is a specialist engaged in writing, updating, correcting and improving algorithms for applications, sites and individual elements using different programming languages.",
+    "primarySkills": [
+      {
+        "id": "aeb0e468-3774-11ec-83d4-97dbf3c3f8eb",
+        "name": ".Net"
+      },
+      {
+        "id": "a539cb10-3775-11ec-8803-1b868ded28bd",
+        "name": "JavaScript"
+      },
+      {
+        "id": "d66d9d10-3775-11ec-9f7d-f7d443b3f4f3",
+        "name": "BusinessAnalyst"
+      }
+    ],
+    "managers": [
+      {
+        "userId": "73e05563-6c9e-4727-9ebb-b08f16cc1001",
+        "userName": "Anthony Clark"
+      }
+    ],
+    "interviewers": [
+      {
+        "userId": "cb40d31e-7447-4ec0-bc53-ab566f3a7b2e",
+        "userName": "Fred Taylor"
+      },
+      {
+        "userId": "71da4db7-36ec-4a6b-bfb3-38d2462bdf2d",
+        "userName": "Justin Walker"
+      }
+    ],
+    "recruiters": [
+      {
+        "userId": "6f885f2c-b60d-4743-b381-4e841d48a956",
+        "userName": "Brandon Harris"
+      },
+      {
+        "userId": "03699464-c0a6-412f-8c83-eca85b359e91",
+        "userName": "Kevin Wils"
+      }
+    ],
+    "mentors": [
+      {
+        "userId": "d1b13d9f-3799-456b-87e2-1bef7db71cb1",
+        "userName": "Christopher Johnson"
+      }
+    ],
+    "isActive": true
+  },
+  {
+    "id": "dd49fe8f-d697-41a5-be23-7066563b85a6",
+    "name": "BA, JS, .NET Development",
+    "startDate": "2021-08-12T00:00:00.000Z",
+    "endDate": "2021-09-30T00:00:00.000Z",
+    "currentApplicationsCount": "3",
+    "plannedApplicationsCount": "3",
+    "description": "A Web developer is a specialist engaged in writing, updating, correcting and improving algorithms for applications, sites and individual elements using different programming languages.",
+    "primarySkills": [
+      {
+        "id": "aeb0e468-3774-11ec-83d4-97dbf3c3f8eb",
+        "name": ".Net"
+      },
+      {
+        "id": "a539cb10-3775-11ec-8803-1b868ded28bd",
+        "name": "JavaScript"
+      },
+      {
+        "id": "d66d9d10-3775-11ec-9f7d-f7d443b3f4f3",
+        "name": "BusinessAnalyst"
+      },
+      {
+        "id": "c3307088-3775-11ec-8e04-b7d29fa6ce1f",
+        "name": "ProjectManager"
+      }
+    ],
+    "managers": [
+      {
+        "userId": "ce33e6c4-30ac-11ec-8d3d-0242ac130003",
+        "userName": "Alex Anderson"
+      }
+    ],
+    "interviewers": [
+      {
+        "userId": "d1b13d9f-3799-456b-87e2-1bef7db71cb1",
+        "userName": "Christopher Johnson"
+      },
+      {
+        "userId": "cb40d31e-7447-4ec0-bc53-ab566f3a7b2e",
+        "userName": "Fred Taylor"
+      }
+    ],
+    "recruiters": [
+      {
+        "userId": "73e05563-6c9e-4727-9ebb-b08f16cc1001",
+        "userName": "Anthony Clark"
+      },
+      {
+        "userId": "6f885f2c-b60d-4743-b381-4e841d48a956",
+        "userName": "Brandon Harris"
+      }
+    ],
+    "mentors": [
+      {
+        "userId": "4f04e857-50ec-42d7-8fe4-0e3d3d8d34b3",
+        "userName": "David Lewis"
+      },
+      {
+        "userId": "d1b13d9f-3799-456b-87e2-1bef7db71cb1",
+        "userName": "Christopher Johnson"
+      }
+    ],
+    "isActive": false
+  }
+]

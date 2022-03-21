@@ -1,0 +1,9 @@
+<div class="item-box mar-top">
+    <div class="inner-item-box">
+      <p>{{ title }}</p>
+      <nz-radio-group>
+
+        <label *ngFor="let option of options" nz-radio [nzValue]="option">{{ option }}</label>
+      </nz-radio-group>
+    </div>
+</div>
